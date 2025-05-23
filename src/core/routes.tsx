@@ -1,4 +1,4 @@
-import { SignInPage, SignUpPage } from '@/pages';
+import { Home, SignInPage, SignUpPage } from '@/pages';
 import { Layout } from '@/pages/Layout';
 import { createBrowserRouter } from 'react-router';
 
@@ -9,11 +9,14 @@ export const routes = createBrowserRouter([
 		children: [
 			{
 				index: true,
+				element: <Home />,
+			},
+			{
 				path: '/sign-in',
 				element: <SignInPage />,
 			},
 			{
-				path: '/sign-up',
+				path: '/sign-up/',
 				element: <SignUpPage />,
 			},
 		],

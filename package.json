@@ -4,10 +4,10 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite --base=/sign-in",
-		"build": "tsc -b && vite build --base=/sign-in",
+		"dev": "vite",
+		"build": "tsc -b && vite build",
 		"lint": "eslint .",
-		"preview": "vite preview -base=/sign-in"
+		"preview": "vite preview"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.7",
