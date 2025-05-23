@@ -15,5 +15,6 @@ export const Button: FC<Props> = ({ className, to, children }) => {
 				{children}
 			</NavLink>
 		);
-	return <button className={styles}>Children</button>;
+
+	return <button className={styles}>{children}</button>;
 };
