@@ -74,13 +74,13 @@ export const Input = forwardRef<Ref, Props>((props, ref) => {
 
 	return (
 		<div className='flex flex-col items-start text-black'>
-			<label htmlFor={name} className={cn(labelSizeMapper[inputSize])}>
-				{label} {label && withAsterisk && <span className='text-red-500'>*</span>}
+			<label htmlFor={rest?.id || name} className={cn(labelSizeMapper[inputSize])}>
+				{label} {label && (withAsterisk || rest.required) && <span className='text-red-500'>*</span>}
 			</label>
 
 			<p className={cn('opacity-50', textSizeMapper[inputSize])}>{description}</p>
 
-			<div className='relative flex items-center'>
+			<div className='relative flex items-center w-full'>
 				<div className='text-inherit absolute inset-y-auto left-2 z-10 pointer-events-none'>{icon}</div>
 				<input
 					ref={ref}
