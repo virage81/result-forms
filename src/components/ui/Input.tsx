@@ -32,9 +32,7 @@ export const Input = forwardRef<Ref, Props>((props, ref) => {
 		variant = 'default',
 		inputSize = 'md',
 		radius = 'md',
-		withAsterisk = false,
 		className = '',
-		name,
 		...rest
 	} = props;
 
@@ -74,8 +72,8 @@ export const Input = forwardRef<Ref, Props>((props, ref) => {
 
 	return (
 		<div className='flex flex-col items-start text-black'>
-			<label htmlFor={rest?.id || name} className={cn(labelSizeMapper[inputSize])}>
-				{label} {label && (withAsterisk || rest.required) && <span className='text-red-500'>*</span>}
+			<label htmlFor={rest.id ?? rest?.name} className={cn(labelSizeMapper[inputSize])}>
+				{label} {label && rest.required && <span className='text-red-500'>*</span>}
 			</label>
 
 			<p className={cn('opacity-50', textSizeMapper[inputSize])}>{description}</p>
@@ -84,9 +82,8 @@ export const Input = forwardRef<Ref, Props>((props, ref) => {
 				<div className='text-inherit absolute inset-y-auto left-2 z-10 pointer-events-none'>{icon}</div>
 				<input
 					ref={ref}
-					id={rest?.id || name}
-					type='text'
-					required={withAsterisk}
+					type={rest.type || 'text'}
+					required={rest.required}
 					{...rest}
 					className={cn(
 						'min-w-10 placeholder:text-gray-500 border',
