@@ -1,13 +1,13 @@
-import type { FC, PropsWithChildren } from 'react';
+import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 import { NavLink } from 'react-router';
 
-type Props = {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, PropsWithChildren {
 	className?: string;
 	to?: string;
-} & PropsWithChildren;
+}
 
 export const Button: FC<Props> = ({ className, to, children }) => {
-	const styles = `flex place-items-center border-2 border-purple-500 px-5 py-2 rounded-md transition-all hover:bg-purple-900 ${className}`;
+	const styles = `flex items-center justify-center border-2 border-purple-500 px-5 py-2 rounded-md transition-all hover:bg-purple-900 ${className}`;
 
 	if (typeof to !== 'undefined')
 		return (
@@ -15,5 +15,6 @@ export const Button: FC<Props> = ({ className, to, children }) => {
 				{children}
 			</NavLink>
 		);
-	return <button className={styles}>Children</button>;
+
+	return <button className={styles}>{children}</button>;
 };
