@@ -1,5 +1,5 @@
+import { Button, Input } from '@/components/common';
 import type { FormEvent } from 'react';
-import { Button, Input } from './common';
 
 export const SignIn = () => {
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
