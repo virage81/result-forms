@@ -1,6 +1,6 @@
 import type { FormEvent } from 'react';
 import { FaUser } from 'react-icons/fa';
-import { Button, Input } from './ui';
+import { Button, Input } from './common';
 
 export const SignUp = () => {
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

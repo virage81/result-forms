@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { Button, Input } from './ui';
+import { Button, Input } from './common';
 
 export const SignIn = () => {
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
